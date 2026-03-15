@@ -1,0 +1,13 @@
+<?php
+
+// comment out the following two lines when deployed to production
+defined('YII_DEBUG') or define('YII_DEBUG', (bool)getenv('APP_DEBUG'));
+
+defined('YII_ENV') or define('YII_ENV', (getenv('APP_ENV') === 'prod' ? 'prod' : 'dev'));
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+
+$config = require __DIR__ . '/../config/web.php';
+
+(new app\components\Application($config))->run();
